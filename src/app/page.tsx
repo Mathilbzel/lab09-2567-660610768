@@ -1,3 +1,4 @@
+"use client"
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import Task from "@components/Task";
@@ -37,7 +38,7 @@ export default function Home() {
     //So objects within an object will be copied too
     const newTasks = structuredClone(tasks);
     //search for a task based on condition
-    const task = newTasks.find((x) => x.id === taskId);
+    const task:any = newTasks.find((x) => x.id === taskId);
     task.completed = !task.completed;
     setTasks(newTasks);
   };
