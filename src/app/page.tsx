@@ -20,25 +20,25 @@ export default function Home() {
   const [tasks, setTasks] = useState<TaskItem[]>([]);
 
   // Define the function with proper type
-  const addTask = (newTaskTitle:any) => {
+  const addTask = (newTaskTitle:string) => {
     const newTask = { id: nanoid(), title: newTaskTitle, completed: false };
     const newTasks = [...tasks, newTask];
     setTasks(newTasks);
   };
 
   // Define the function with proper type
-  const deleteTask = (taskId:any) => {
+  const deleteTask = (taskId:string) => {
     const newTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(newTasks);
   };
 
   // Define the function with proper type
-  const toggleDoneTask = (taskId:any) => {
+  const toggleDoneTask = (taskId:string) => {
     //structuredClone will copy an array or an object "deeply"
     //So objects within an object will be copied too
     const newTasks = structuredClone(tasks);
     //search for a task based on condition
-    const task:any = newTasks.find((x) => x.id === taskId);
+    const task = newTasks.find((x) => x.id === taskId);
     task.completed = !task.completed;
     setTasks(newTasks);
   };

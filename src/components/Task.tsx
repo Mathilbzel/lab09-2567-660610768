@@ -33,7 +33,7 @@ export default function Task({
         <span>{title}</span>
       */}
       <span className={completed? "text-decoration-line-through":""}>{title}</span>
-      <button className="btn btn-success">Done</button>
+      <button className="btn btn-success" onClick={doneBtnOnClick}>Done</button>
       <button className="btn btn-danger" onClick={deleteBtnOnClick}>
         Delete
       </button>
